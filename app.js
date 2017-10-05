@@ -78,7 +78,11 @@ function nextPlayer() {
 }
 
 
-
+document.querySelector('.btn-new').addEventListener('click', function() {
+  scores = [0,0];
+  activePlayer = 0;
+  roundScore = 0;
+})
 
 
 

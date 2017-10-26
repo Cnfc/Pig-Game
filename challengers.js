@@ -1,3 +1,5 @@
+alert("THE RULES: In each turn, player rolls a dice. Each results get added to his round score. IF rolls 1 => ROUND score gets lost. The players can choose to HOLD, which means that his round score gerts added to his GLOBAL score.You can choose FINAL score ")
+
 var scores, roundScore, activePlayer, gamePlaying;
 
 init();
@@ -19,7 +21,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     document.getElementById('dice-1').style.display = "block";
     document.getElementById('dice-2').style.display = "block";
     document.getElementById('dice-1').src = "dice-" + dice1 + ".png";
-    document.getElementById('dice-1').src = "dice-" + dice2 + ".png";
+    document.getElementById('dice-2').src = "dice-" + dice2 + ".png";
 
     //3. Update the round score
     if (dice1 !== 1 && dice2 !==1) {
@@ -30,22 +32,6 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     } else {
       nextPlayer();
     }
-
-    // if(dice === 6 && lastDice === 6) {
-    //   //player looses score
-    //   scores[activePlayer] = 0;
-    //   document.querySelector('#score-' + activePlayer).textContent = '0';
-    //   nextPlayer();
-    // } else if (dice !== 1 ) {
-    //   //Add score
-    //   roundScore += dice;
-    //   document.querySelector('#current-' + activePlayer).textContent = roundScore;
-    //
-    // } else {
-    //   nextPlayer();
-    // }
-    //
-    // lastDice = dice;
   }
 });
 
@@ -129,8 +115,3 @@ function init() {
 
 
 }
-
-//
-// //document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
-
-//var x = document.querySelector('#score-1').textContent;
